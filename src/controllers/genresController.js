@@ -8,5 +8,12 @@ const genresController={
             })
         
     },
+    detail:(req,res)=>{
+        db.genres.findByPk(req.params.id)
+            .then(function (genre) {
+                res.render("genresDetail",{genre:genre})
+                
+            })
+    },
 }
 module.exports=genresController
